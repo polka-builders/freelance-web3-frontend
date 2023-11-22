@@ -1,9 +1,41 @@
 import React from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import HomeSVG from "../images/home.svg";
 import FeaturesCard from "../reusables/FeaturesCard";
+import FlowCard from "../reusables/FlowCard";
+import ApplyCard from "../reusables/ApplyCard";
+import Button from "../reusables/Button";
 
 const Home = () => {
+  const FlowData = [
+    {
+      icon: require("../images/submission.svg").default,
+      title: "Project Submission",
+      content:
+        "Submit your requirements and reach out to top-tier talent globally",
+      color: "#3C5DED",
+    },
+    {
+      icon: require("../images/bidding.svg").default,
+      title: "Bidding Process",
+      content: "Review proposals, check out past work, and select the offer",
+      color: "#E0683B",
+    },
+    {
+      icon: require("../images/selectExpert.svg").default,
+      title: "Select Your Expert",
+      content:
+        "Discuss project specifics, align on expectations, and establish milestones",
+      color: "#905BEC",
+    },
+    {
+      icon: require("../images/jobCompletion.svg").default,
+      title: "Job Completion",
+      content:
+        "Review the work delivered,  and finalize any necessary adjustments",
+      color: "#51B73E",
+    },
+  ];
   return (
     <Box>
       <Box
@@ -36,15 +68,8 @@ const Home = () => {
           <Typography variant="subtitle1" component="div">
             Contact Us
           </Typography>
-          <Button variant="outlined" sx={{ fontWeight: "bold" }}>
-            Apply Now
-          </Button>
-          <Button
-            variant="contained"
-            sx={{ color: "white", fontWeight: "bold" }}
-          >
-            Hire Now
-          </Button>
+          <Button label="Apply Now" inverse />
+          <Button label="Hire Now" />
         </Box>
       </Box>
       <Box
@@ -83,17 +108,10 @@ const Home = () => {
               genuine prospects.
             </Typography>
             <Button
-              variant="contained"
-              sx={{ color: "white", fontWeight: "bold" }}
-            >
-              Apply as Freelancer
-            </Button>
-            <Button
-              variant="outlined"
-              sx={{ fontWeight: "bold", ml: 4, backgroundColor: "white" }}
-            >
-              Hire Freelancer
-            </Button>
+              label="Apply as Freelancer"
+              style={{ marginRight: "20px" }}
+            />
+            <Button label="Hire Freelancer" inverse />
           </Box>
           <Box sx={{ width: "40%", marginLeft: "10%" }}>
             <img
@@ -177,6 +195,265 @@ const Home = () => {
               title="Web3 Empowered Freelancing"
               content="Leverage the decentralized web for enhanced freelancing experiences."
             />
+          </Box>
+        </Box>
+      </Box>
+      <Box
+        sx={{
+          backgroundColor: "#F5FCFF",
+          py: 10,
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Box
+          sx={{
+            width: "75%",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          {FlowData.map((i, index) => (
+            <FlowCard
+              icon={i.icon}
+              title={i.title}
+              content={i.content}
+              color={i.color}
+              index={index}
+            />
+          ))}
+        </Box>
+      </Box>
+      <Box
+        sx={{
+          py: 15,
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Box
+          sx={{
+            width: "75%",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <ApplyCard
+            icon={require("../images/working.svg").default}
+            title="Apply as Freelancer"
+            content="Join our platform to showcase your skills. Connect with clients, work on exciting projects, and monetize your expertise"
+            btnName="Join as Expert"
+          />
+          <ApplyCard
+            icon={require("../images/employee.svg").default}
+            title="Hire Freelancer"
+            content="Find skilled professionals for your projects. Streamline tasks with expert assistance and achieve your goals efficiently"
+            btnName="Find an Expert"
+          />
+        </Box>
+      </Box>
+      <Box
+        sx={{
+          backgroundColor: "#FBFBFB",
+          pt: 10,
+          pb: 2,
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Box
+          sx={{
+            width: "75%",
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexDirection: "row",
+            }}
+          >
+            <Box sx={{ flex: 0.3 }}>
+              <Typography
+                variant="h5"
+                component="div"
+                sx={{ fontWeight: "Bold", mb: 2 }}
+              >
+                Logo
+              </Typography>
+              <Typography
+                variant="body1"
+                component="div"
+                sx={{
+                  color: "#8C91A3",
+                  mt: 1,
+                }}
+              >
+                Connect with a vast community of 30,000 freelancers, thriving in
+                their passion and securing rewarding opportunities.
+              </Typography>
+              <Box sx={{ mt: 2 }}>
+                <img
+                  src={require("../images/linkedin.svg").default}
+                  alt="projectSubmission"
+                  style={{ width: "38px", height: "38px", marginRight: "15px" }}
+                />
+                <img
+                  src={require("../images/discord.svg").default}
+                  alt="projectSubmission"
+                  style={{ width: "38px", height: "38px", marginRight: "15px" }}
+                />
+                <img
+                  src={require("../images/facebook.svg").default}
+                  alt="projectSubmission"
+                  style={{ width: "38px", height: "38px", marginRight: "15px" }}
+                />
+                <img
+                  src={require("../images/instagram.svg").default}
+                  alt="projectSubmission"
+                  style={{ width: "38px", height: "38px", marginRight: "15px" }}
+                />
+                <img
+                  src={require("../images/youtube.svg").default}
+                  alt="projectSubmission"
+                  style={{ width: "38px", height: "38px", marginRight: "15px" }}
+                />
+              </Box>
+            </Box>
+            <Box
+              sx={{
+                flex: 0.18,
+              }}
+            >
+              <Typography
+                variant="h5"
+                component="div"
+                sx={{ fontWeight: "Bold", mb: 2 }}
+              >
+                Product
+              </Typography>
+              {["About", "Contact Us", "Features", "Reviews", "Blog"].map(
+                (i1) => (
+                  <Typography
+                    variant="body1"
+                    component="div"
+                    sx={{
+                      color: "#8C91A3",
+                      mt: 1,
+                    }}
+                  >
+                    {i1}
+                  </Typography>
+                )
+              )}
+            </Box>
+            <Box sx={{ flex: 0.18 }}>
+              <Typography
+                variant="h5"
+                component="div"
+                sx={{ fontWeight: "Bold", mb: 2 }}
+              >
+                Support
+              </Typography>
+              {[
+                "Getting Started",
+                "Chat Support",
+                "Report a Bug",
+                "Help Center",
+              ].map((i1) => (
+                <Typography
+                  variant="body1"
+                  component="div"
+                  sx={{
+                    color: "#8C91A3",
+                    mt: 1,
+                  }}
+                >
+                  {i1}
+                </Typography>
+              ))}
+            </Box>
+            <Box
+              sx={{
+                flex: 0.23,
+              }}
+            >
+              <Typography
+                variant="h5"
+                component="div"
+                sx={{ fontWeight: "Bold", mb: 2 }}
+              >
+                Contact Us
+              </Typography>
+              <Box sx={{ mt: 2, display: "flex", alignItems: "center" }}>
+                <img
+                  src={require("../images/mail.svg").default}
+                  alt="projectSubmission"
+                  style={{ width: "18px", height: "18px", marginRight: "8px" }}
+                />
+                <Typography
+                  variant="body1"
+                  component="div"
+                  sx={{
+                    color: "#8C91A3",
+                  }}
+                >
+                  freelance@gmail.com
+                </Typography>
+              </Box>
+              <Box sx={{ mt: 2, display: "flex", alignItems: "center" }}>
+                <img
+                  src={require("../images/phone.svg").default}
+                  alt="projectSubmission"
+                  style={{ width: "18px", height: "18px", marginRight: "8px" }}
+                />
+                <Typography
+                  variant="body1"
+                  component="div"
+                  sx={{
+                    color: "#8C91A3",
+                  }}
+                >
+                  {`(241) 673 2861`}
+                </Typography>
+              </Box>
+            </Box>
+          </Box>
+          {/* copyright section */}
+
+          <Box>
+            <Box
+              sx={{
+                backgroundColor: "#E9EBF3",
+                width: "100%",
+                height: "1px",
+                mt: 4,
+                mb: 2,
+              }}
+            ></Box>
+            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography
+                variant="body2"
+                component="div"
+                sx={{
+                  color: "#8C91A3",
+                }}
+              >
+                Copyright©2023 Name
+              </Typography>
+              <Typography
+                variant="body2"
+                component="div"
+                sx={{
+                  color: "#8C91A3",
+                  cursor: "pointer",
+                }}
+              >
+                All Rights Reserved | Terms and Conditions | Privacy Policy
+              </Typography>
+            </Box>
           </Box>
         </Box>
       </Box>
